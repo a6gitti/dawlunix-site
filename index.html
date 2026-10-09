@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DawLunix is a native, lightweight Linux DAW for making beats.">
+  <meta name="theme-color" content="#121212">
+  <title>DawLunix — a Linux DAW for beat makers</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!--
+    TAGLINES
+    The line on the page is the default. Swap the text in p.tagline if you want another.
+    1. Made by a beat maker, for beat makers.
+    2. A Linux DAW that stays out of the way of the beat.
+    3. Sequence, sample, and bounce without leaving Linux.
+    4. Native on Linux, built for the next loop.
+  -->
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="brand" href="#content">
+        <img src="images/logo.png" alt="" width="256" height="256">
+        <span>DawLunix</span>
+      </a>
+      <nav aria-label="Page">
+        <a href="#vision">Vision</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ========== HERO ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <img class="hero-logo" src="images/logo.png" alt="DawLunix logo" width="256" height="256">
+        <div>
+          <p class="kicker">Native Linux DAW</p>
+          <h1 id="hero-title">DawLunix</h1>
+          <p class="tagline">Made by a beat maker, for beat makers.</p>
+          <p class="lead">Arrange on the playlist, write the part in the piano roll, and bounce a mix when the idea is finished. One window, built to stay light.</p>
+          <p class="hero-actions">
+            <a class="button" href="#features">See the features</a>
+            <a class="button button-quiet" href="#screenshots">Screenshots</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VISION ========== -->
+    <section id="vision" class="band" aria-labelledby="vision-title">
+      <div class="wrap narrow">
+        <p class="kicker">Vision</p>
+        <h2 id="vision-title">A native, lightweight Linux DAW for making beats fast.</h2>
+        <p>DawLunix is a normal Linux application. The drum grid, the playlist, the piano roll, and the mixer live in the same window, so a beat can start without a pile of setup. It is aimed at people who want to work quickly and hear the idea back as audio.</p>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section id="features" class="band" aria-labelledby="features-title">
+      <div class="wrap">
+        <p class="kicker">Features</p>
+        <h2 id="features-title">What is in the window</h2>
+        <div class="cards">
+
+          <!-- Playlist and piano roll -->
+          <article class="card">
+            <h3>Playlist and piano roll</h3>
+            <p>The playlist is the arrangement. Tracks can be renamed, another lane can be added, and the lane list scrolls when it grows. The timeline scrolls sideways out to bar 300.</p>
+            <p>MIDI clips and imported WAV or MP3 audio sit on the same lanes. Open the piano roll and the notes belong to that clip: move a note and the playlist stays in step with it. <kbd>C</kbd> cuts the selected clip at the playhead. <kbd>S</kbd> toggles stretch on the selected clip.</p>
+          </article>
+
+          <!-- dSynth -->
+          <article class="card">
+            <h3>dSynth and its sampler</h3>
+            <p>dSynth is the built-in sampler, one on each playlist track. It opens from the <strong>dS</strong> button. A factory bank of eight sounds is already there: 808morphC, alienmorphC, bassmorphC, coolshiC, morphC, pluckC, poizC, and stringC.</p>
+            <p>The Sampler row imports your own WAV, AIFF, FLAC, or MP3. Each source can be included, locked, muted, or soloed. Attack, decay, sustain, release, pitch, low cut, and high cut shape the tone. Generate blends the included sources, and Undo steps back.</p>
+          </article>
+
+          <!-- Drum kit -->
+          <article class="card">
+            <h3>Drum kit</h3>
+            <p>Four rows: kick, snare, hi-hat, and open hat. Each one starts from a built-in sample, and each row can load a different WAV, AIFF, FLAC, or MP3. The grid is sixteen steps.</p>
+            <p>Commit to Playlist bounces the grid into an audio clip on the first track, at the playhead. Clear Grid wipes the steps.</p>
+          </article>
+
+          <!-- Mixer -->
+          <article class="card">
+            <h3>Mixer</h3>
+            <p>Ten channel strips plus a master. Every strip has a fader, pan, mute, solo, and a meter, and six plugin slots. The stock plugins are EQ, Compressor, Reverb, Echo/Delay, and Maximizer.</p>
+            <p><kbd>F9</kbd> shows or hides the mixer. It docks in the window, under the piano roll.</p>
+          </article>
+
+          <!-- VST3 -->
+          <article class="card">
+            <h3>VST3 instruments</h3>
+            <p>A playlist track can play dSynth or a Linux VST3 instrument. The picker scans <code>~/.vst3</code>, <code>/usr/lib/vst3</code>, and <code>/usr/local/lib/vst3</code>.</p>
+            <p>The project file stores the plugin file and its state, so the instrument comes back with the song. Surge XT is one instrument that format is written to remember.</p>
+          </article>
+
+          <!-- Export -->
+          <article class="card">
+            <h3>WAV, MP3, and stems</h3>
+            <p>Export bounces the song from a small window. Master WAV is 24-bit. Master MP3 is there when the <code>lame</code> encoder is installed. All stems writes a 24-bit WAV for each playlist track that has a clip.</p>
+            <p>Files are named from the project and saved in <code>Documents/DawLunix</code>, inside a folder called after the project.</p>
+          </article>
+
+          <!-- Shortcuts -->
+          <article class="card card-wide">
+            <h3>Keyboard shortcuts</h3>
+            <p>These work while the main window has the keyboard. dSynth is its own window and keeps its note keys.</p>
+            <ul class="keys">
+              <li><kbd>Space</kbd> <span>Play or pause</span></li>
+              <li><kbd>Enter</kbd> <span>Stop and rewind the playhead to the start</span></li>
+              <li><kbd>C</kbd> <span>Cut the selected clip at the playhead</span></li>
+              <li><kbd>S</kbd> <span>Toggle stretch on the selected clip</span></li>
+              <li><kbd>Ctrl</kbd><span class="plus">+</span><kbd>S</kbd> <span>Save. If the project is still Untitled, Settings opens so it can be named.</span></li>
+              <li><kbd>Home</kbd> <span>Scroll the timeline back to the start</span></li>
+              <li><kbd>Delete</kbd> <span>Delete selected piano-roll notes, or the selected clip when the piano roll is hidden. Backspace does the same.</span></li>
+              <li><kbd>F9</kbd> <span>Show or hide the mixer</span></li>
+              <li><kbd>Escape</kbd> <span>Close a track rename or a plugin popup, then ask whether to quit</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCREENSHOTS ========== -->
+    <section id="screenshots" class="band" aria-labelledby="screenshots-title">
+      <div class="wrap">
+        <p class="kicker">Screenshots</p>
+        <h2 id="screenshots-title">The window, as it runs</h2>
+        <p class="section-lead">Captured from DawLunix itself. On a phone, swipe a wide picture sideways inside its frame.</p>
+        <div class="shots">
+          <figure>
+            <div class="frame" tabindex="0">
+              <img src="images/screenshot-playlist.png" width="1460" height="770" alt="DawLunix arrangement window: drum grid with kick, snare, hi-hat and open hat, a piano roll, and playlist tracks named Keys, Lead, Bass and Perc, each with a MIDI clip.">
+            </div>
+            <figcaption>Playlist. Drums across the top, the piano roll under them, and four tracks with MIDI clips.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame" tabindex="0">
+              <img src="images/screenshot-piano-roll.png" width="900" height="188" alt="Piano roll on the Keys track in DawLunix, with green MIDI notes and a yellow playhead.">
+            </div>
+            <figcaption>Piano roll on the Keys track. The notes are the same ones sitting in the playlist clip.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame" tabindex="0">
+              <img src="images/screenshot-mixer.png" width="1640" height="200" alt="DawLunix mixer with strips for Keys, Lead, Bass, Perc, six more channels, and Master. Plugin slots show EQ, Compressor, Reverb, Delay, and Maximizer.">
+            </div>
+            <figcaption>Mixer open. Ten channels plus master. This pass has EQ, a compressor, reverb, echo/delay, and a maximizer loaded.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame" tabindex="0">
+              <img src="images/screenshot-dsynth.png" width="820" height="740" alt="dSynth window with Attack, Decay, Sustain, Release, Pitch, Low cut and High cut knobs, eight factory sounds, and a Sampler row ready for an imported sample.">
+            </div>
+            <figcaption>dSynth. Factory sounds, the tone knobs, and the Sampler row underneath.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DOWNLOAD ========== -->
+    <section id="download" class="band" aria-labelledby="download-title">
+      <div class="wrap narrow">
+        <p class="kicker">Download</p>
+        <h2 id="download-title">Coming soon: .deb download</h2>
+        <p>An Ubuntu package is the plan. There is no installer on this page yet, and no file to fetch.</p>
+        <p class="soon" role="status">.deb &mdash; coming soon</p>
+        <p>When there is news, it will be with the author on <a href="https://github.com/a6gitti">GitHub</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>DawLunix</strong></p>
+      <p>Made by a beat maker, for beat makers.</p>
+      <p><a href="https://github.com/a6gitti">github.com/a6gitti</a></p>
+    </div>
+  </footer>
+</body>
+</html>
