@@ -45,7 +45,7 @@
         <img class="hero-logo" src="images/logo.png" alt="DawLunix logo" width="256" height="256">
         <div>
           <p class="kicker">Native Linux DAW</p>
-          <h1 id="hero-title">DawLunix</h1>
+          <h1 id="hero-title">DawLunix <span class="badge">Beta</span></h1>
           <p class="tagline">Made by a beat maker, for beat makers.</p>
           <p class="lead">Arrange on the playlist, write the part in the piano roll, and bounce a mix when the idea is finished. One window, built to stay light.</p>
           <p class="hero-actions">
@@ -104,7 +104,7 @@
           <article class="card">
             <h3>VST3 instruments</h3>
             <p>A playlist track can play dSynth or a Linux VST3 instrument. The picker scans <code>~/.vst3</code>, <code>/usr/lib/vst3</code>, and <code>/usr/local/lib/vst3</code>.</p>
-            <p>The project file stores the plugin file and its state, so the instrument comes back with the song. Surge XT is one instrument that format is written to remember.</p>
+            <p>The project file stores the plugin file and its state, so the instrument comes back with the song. Surge XT is one instrument that format is written to remember. Windows VST3 plugins use <a href="#yabridge">yabridge</a>.</p>
           </article>
 
           <!-- Export -->
@@ -112,6 +112,21 @@
             <h3>WAV, MP3, and stems</h3>
             <p>Export bounces the song from a small window. Master WAV is 24-bit. Master MP3 is there when the <code>lame</code> encoder is installed. All stems writes a 24-bit WAV for each playlist track that has a clip.</p>
             <p>Files are named from the project and saved in <code>Documents/DawLunix</code>, inside a folder called after the project.</p>
+          </article>
+
+          <!-- yabridge -->
+          <article class="card card-wide" id="yabridge">
+            <h3>Windows VST3 plugins via yabridge</h3>
+            <p>Windows VST3 plugins load through yabridge. They are scanned out of process, with a timeout, and loaded in the background.</p>
+            <p>The bundled yabridge is 5.1.1. It hosts 64-bit plugins only. The 32-bit host is not included.</p>
+            <h4>Setup</h4>
+            <p class="aside">Wine is optional. You only need it if you want to use Windows VST3 plugins through yabridge.</p>
+            <ol class="steps">
+              <li>Install wine, or wine-staging.</li>
+              <li><pre class="command"><code>/usr/lib/dawlunix/yabridge/yabridgectl add &lt;your Windows VST3 folder&gt;</code></pre></li>
+              <li><pre class="command"><code>/usr/lib/dawlunix/yabridge/yabridgectl sync</code></pre></li>
+              <li>Rescan in DawLunix.</li>
+            </ol>
           </article>
 
           <!-- Shortcuts -->
@@ -170,13 +185,34 @@
     </section>
 
     <!-- ========== DOWNLOAD ========== -->
+    <!--
+      The .deb is a GitHub Release asset, not a file in this repository.
+      The package version is 1.0.0~beta1. The hosted filename uses a hyphen
+      (dawlunix_1.0.0-beta1_amd64.deb) because a "~" is not kept in a release
+      asset name. Install commands use that hosted filename.
+    -->
     <section id="download" class="band" aria-labelledby="download-title">
       <div class="wrap narrow">
         <p class="kicker">Download</p>
-        <h2 id="download-title">Coming soon: .deb download</h2>
-        <p>An Ubuntu package is the plan. There is no installer on this page yet, and no file to fetch.</p>
-        <p class="soon" role="status">.deb &mdash; coming soon</p>
-        <p>When there is news, it will be with the author on <a href="https://github.com/a6gitti">GitHub</a>.</p>
+        <h2 id="download-title">DawLunix 1.0.0 beta 1</h2>
+        <p class="beta-notice" role="note"><strong>Beta.</strong> Expect bugs. Keep backups of your projects.</p>
+        <p class="download-actions">
+          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta1/dawlunix_1.0.0-beta1_amd64.deb">Download DawLunix 1.0.0 beta 1 (.deb)</a>
+        </p>
+        <p class="aside">Wine is optional. You only need it if you want to use Windows VST3 plugins through yabridge.</p>
+        <p>DawLunix runs fully without Wine: dSynth, drums, the mixer, export, and native Linux VST3s such as Surge XT.</p>
+        <h3>Supported systems</h3>
+        <p>Ubuntu 22.04 and 24.04, amd64. Built on Ubuntu 22.04.</p>
+        <h3>Checksum</h3>
+        <p class="checksum">sha256 <code>0f19bc395f692d2cd9f87e5174975ece4289bd1d7f856218e80e018f3fdcb4d0</code></p>
+        <p>The hosted file is <code>dawlunix_1.0.0-beta1_amd64.deb</code>. The package version is <code>1.0.0~beta1</code>. <a href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta1/SHA256SUMS.txt">SHA256SUMS.txt</a> is on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta1">v1.0.0-beta1</a> pre-release.</p>
+        <h3>Install</h3>
+        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta1_amd64.deb</code></pre>
+        <p>apt may pull in Wine as a Recommends. To skip it:</p>
+        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta1_amd64.deb</code></pre>
+        <p>Skipping recommended packages also skips <code>lame</code>. Install <code>lame</code> separately if you want MP3 export.</p>
+        <h3>Uninstall</h3>
+        <pre class="command"><code>sudo apt remove dawlunix</code></pre>
       </div>
     </section>
   </main>
@@ -187,6 +223,8 @@
       <p><strong>DawLunix</strong></p>
       <p>Made by a beat maker, for beat makers.</p>
       <p><a href="https://github.com/a6gitti">github.com/a6gitti</a></p>
+      <p><strong>Credits</strong></p>
+      <p>yabridge 5.1.1 by Robbert van der Helm, GPL-3.0. <a href="https://github.com/robbert-vdh/yabridge">github.com/robbert-vdh/yabridge</a>. Its license is included in the package at <code>/usr/share/doc/dawlunix/yabridge-LICENSE</code>.</p>
     </div>
   </footer>
 </body>
