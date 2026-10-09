@@ -470,7 +470,8 @@ figcaption {
 
 .command code {
   font-size: 0.84rem;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .steps .command {
@@ -521,6 +522,11 @@ figcaption {
 }
 
 @media (max-width: 699px) {
+  /* The header wraps onto two rows, taller than --header. */
+  html {
+    scroll-padding-top: 132px;
+  }
+
   .wrap,
   .narrow {
     width: min(1120px, calc(100% - 28px));
