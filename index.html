@@ -114,6 +114,12 @@
             <p>Files are named from the project and saved in <code>Documents/DawLunix</code>, inside a folder called after the project.</p>
           </article>
 
+          <!-- Drag and drop -->
+          <article class="card card-wide">
+            <h3>Drag and drop</h3>
+            <p>Drag WAV or MP3 audio from the file manager onto a playlist lane or a drum row. Drops work on Wayland and X11: the GNOME Wayland session and Xorg.</p>
+          </article>
+
           <!-- yabridge -->
           <article class="card card-wide" id="yabridge">
             <h3>Windows VST3 plugins via yabridge</h3>
@@ -187,29 +193,30 @@
     <!-- ========== DOWNLOAD ========== -->
     <!--
       The .deb is a GitHub Release asset, not a file in this repository.
-      The package version is 1.0.0~beta1. The hosted filename uses a hyphen
-      (dawlunix_1.0.0-beta1_amd64.deb) because a "~" is not kept in a release
+      The package version is 1.0.0~beta2. The hosted filename uses a hyphen
+      (dawlunix_1.0.0-beta2_amd64.deb) because a "~" is not kept in a release
       asset name. Install commands use that hosted filename.
     -->
     <section id="download" class="band" aria-labelledby="download-title">
       <div class="wrap narrow">
         <p class="kicker">Download</p>
-        <h2 id="download-title">DawLunix 1.0.0 beta 1</h2>
+        <h2 id="download-title">DawLunix 1.0.0 beta 2</h2>
         <p class="beta-notice" role="note"><strong>Beta.</strong> Expect bugs. Keep backups of your projects.</p>
+        <p><strong>New in beta 2.</strong> Drag and drop WAV or MP3 audio from the file manager onto playlist lanes and drum rows. This works on Wayland and X11: the GNOME Wayland session and Xorg.</p>
         <p class="download-actions">
-          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta1/dawlunix_1.0.0-beta1_amd64.deb">Download DawLunix 1.0.0 beta 1 (.deb)</a>
+          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/dawlunix_1.0.0-beta2_amd64.deb">Download DawLunix 1.0.0 beta 2 (.deb)</a>
         </p>
         <p class="aside">Wine is optional. You only need it if you want to use Windows VST3 plugins through yabridge.</p>
         <p>DawLunix runs fully without Wine: dSynth, drums, the mixer, export, and native Linux VST3s such as Surge XT.</p>
         <h3>Supported systems</h3>
         <p>Ubuntu 22.04 and 24.04, amd64. Built on Ubuntu 22.04.</p>
         <h3>Checksum</h3>
-        <p class="checksum">sha256 <code>0f19bc395f692d2cd9f87e5174975ece4289bd1d7f856218e80e018f3fdcb4d0</code></p>
-        <p>The hosted file is <code>dawlunix_1.0.0-beta1_amd64.deb</code>. The package version is <code>1.0.0~beta1</code>. <a href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta1/SHA256SUMS.txt">SHA256SUMS.txt</a> is on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta1">v1.0.0-beta1</a> pre-release.</p>
+        <p class="checksum">sha256 <code>fd151ee9a24484f4244f04855440d3d54064f72e98ca63d21199b0f7b3f6eeb5</code></p>
+        <p>The hosted file is <code>dawlunix_1.0.0-beta2_amd64.deb</code>. The package version is <code>1.0.0~beta2</code>. <a href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/SHA256SUMS.txt">SHA256SUMS.txt</a> is on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta2">v1.0.0-beta2</a> pre-release.</p>
         <h3>Install</h3>
-        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta1_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta2_amd64.deb</code></pre>
         <p>apt may pull in Wine as a Recommends. To skip it:</p>
-        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta1_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta2_amd64.deb</code></pre>
         <p>Skipping recommended packages also skips <code>lame</code>. Install <code>lame</code> separately if you want MP3 export.</p>
         <h3>Uninstall</h3>
         <pre class="command"><code>sudo apt remove dawlunix</code></pre>
