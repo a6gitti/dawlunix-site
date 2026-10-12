@@ -87,16 +87,16 @@ A count only you can read needs a counter you host. Point the download button at
 
 The Ubuntu package is a GitHub Release on this repository. It is not committed into the site tree. DawLunix source stays in its private repository and is never added here.
 
-The current pre-release is tag `v1.0.0-beta2`:
+The current pre-release is tag `v1.0.0-beta3`:
 
-- Package: https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/dawlunix_1.0.0-beta2_amd64.deb
-- Checksums: https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/SHA256SUMS.txt
+- Package: https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta3/dawlunix_1.0.0-beta3_amd64.deb (18,043,542 bytes)
+- Release: https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta3
 
-`v1.0.0-beta1` is still published and was not replaced.
+`v1.0.0-beta2` and `v1.0.0-beta1` are still published. This release's only asset is the `.deb`. The sha256 is in the release notes and on the download section.
 
-The package version inside the `.deb` is `1.0.0~beta2`. A `~` in a release asset name is not kept (GitHub stores it as `.`). Rename the file you upload to use a hyphen, `dawlunix_1.0.0-beta2_amd64.deb`, and write `SHA256SUMS.txt` for that filename. Renaming does not change the sha256. The install commands on the page use the hosted filename. `sudo apt remove dawlunix` does not, because that is the package name.
+The package version inside the `.deb` is `1.0.0~beta3`. The hosted filename is `dawlunix_1.0.0-beta3_amd64.deb`. A `~` in a release asset name is not kept (GitHub stores it as `.`), so use a hyphen in the uploaded name. The install commands on the page use that filename. `sudo apt remove dawlunix` does not, because that is the package name.
 
-sha256 of this package: `fd151ee9a24484f4244f04855440d3d54064f72e98ca63d21199b0f7b3f6eeb5`
+sha256 of this package: `6b6988ef4e54b7898e28fc1ce178e0ac8b2dd5c2571b62cfeb7b6612a89a46ef`
 
 ### A later release
 
@@ -106,13 +106,13 @@ sha256 of this package: `fd151ee9a24484f4244f04855440d3d54064f72e98ca63d21199b0f
 4. Publish the release. `--prerelease` marks a beta. Leave it off for a stable release. This creates the tag if it does not exist yet.
 
 ```
-gh release create v1.0.0-beta3 --repo a6gitti/dawlunix-site --prerelease \
-  --title "DawLunix 1.0.0 beta 3" \
+gh release create v1.0.0-beta4 --repo a6gitti/dawlunix-site --prerelease \
+  --title "DawLunix 1.0.0 beta 4" \
   --notes "Pre-release package for Ubuntu 22.04 and 24.04 (amd64)." \
-  dawlunix_1.0.0-beta3_amd64.deb SHA256SUMS.txt
+  dawlunix_1.0.0-beta4_amd64.deb SHA256SUMS.txt
 ```
 
-5. In `index.html`, update the download section: the button label, both asset URLs, the sha256, the install commands, the supported Ubuntu versions if they changed, and the beta notice if this release is still a beta. Update the yabridge version in the feature card and the footer if the bundled copy changed.
+5. In `index.html`, update the download section: the button label, the asset URL, the sha256, the file size, the install commands, the supported Ubuntu versions if they changed, and the beta notice if this release is still a beta. Update the yabridge version in the feature card and the footer if the bundled copy changed.
 6. Commit that page change and push to `main`. Pages serves the site. The package is downloaded from the release URL.
 
 If creating the release returns 403, commit the `.deb` and `SHA256SUMS.txt` under `downloads/` instead (the file is under GitHub's size limit) and link them with relative paths, for example `downloads/dawlunix_1.0.0-beta2_amd64.deb`. Pages will serve those files from the site root. Do not put a `~` in the committed filename.

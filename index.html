@@ -104,7 +104,7 @@
           <!-- Mixer -->
           <article class="card">
             <h3>Mixer</h3>
-            <p>Ten channel strips plus a master. Every strip has a fader, pan, mute, solo, and a meter, and six plugin slots. The stock plugins are EQ, Compressor, Reverb, Echo/Delay, and Maximizer.</p>
+            <p>Ten channel strips plus a master. Every strip has a fader, pan, mute, solo, and a meter, and six plugin slots. Each fader shows a dB readout: drag the bubble, double-click to reset to 0 dB, <kbd>Ctrl</kbd>+drag for a finer move, or type a value. The stock plugins are EQ, Compressor, Reverb, Echo/Delay, Maximizer, and Halftime. Halftime is a tempo-synced tape-style slowdown, from 25% to 100% slower. 100% is half speed.</p>
             <p><kbd>F9</kbd> shows or hides the mixer. It docks in the window, under the piano roll.</p>
           </article>
 
@@ -201,30 +201,30 @@
     <!-- ========== DOWNLOAD ========== -->
     <!--
       The .deb is a GitHub Release asset, not a file in this repository.
-      The package version is 1.0.0~beta2. The hosted filename uses a hyphen
-      (dawlunix_1.0.0-beta2_amd64.deb) because a "~" is not kept in a release
-      asset name. Install commands use that hosted filename.
+      The package version is 1.0.0~beta3. The hosted filename is
+      dawlunix_1.0.0-beta3_amd64.deb. This release's only asset is that file.
+      Install commands use that filename.
     -->
     <section id="download" class="band" aria-labelledby="download-title">
       <div class="wrap narrow">
         <p class="kicker">Download</p>
-        <h2 id="download-title">DawLunix 1.0.0 beta 2</h2>
+        <h2 id="download-title">DawLunix 1.0.0 beta 3</h2>
         <p class="beta-notice" role="note"><strong>Beta.</strong> Expect bugs. Keep backups of your projects.</p>
-        <p><strong>New in beta 2.</strong> Drag and drop WAV or MP3 audio from the file manager onto playlist lanes and drum rows. This works on Wayland and X11: the GNOME Wayland session and Xorg.</p>
+        <p><strong>New in beta 3.</strong> Every mixer fader shows a dB readout. Drag the bubble, double-click to reset to 0 dB, <kbd>Ctrl</kbd>+drag for a finer move, or type a value. Halftime is a tempo-synced tape-style slowdown, from 25% to 100% slower. 100% is half speed.</p>
         <p class="download-actions">
-          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/dawlunix_1.0.0-beta2_amd64.deb">Download DawLunix 1.0.0 beta 2 (.deb)</a>
+          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta3/dawlunix_1.0.0-beta3_amd64.deb">Download DawLunix 1.0.0 beta 3 (.deb)</a>
         </p>
         <p class="aside">Wine is optional. You only need it if you want to use Windows VST3 plugins through yabridge.</p>
         <p>DawLunix runs fully without Wine: dSynth, drums, the mixer, export, and native Linux VST3s such as Surge XT.</p>
         <h3>Supported systems</h3>
         <p>Ubuntu 22.04 and 24.04, amd64. Built on Ubuntu 22.04.</p>
         <h3>Checksum</h3>
-        <p class="checksum">sha256 <code>fd151ee9a24484f4244f04855440d3d54064f72e98ca63d21199b0f7b3f6eeb5</code></p>
-        <p>The hosted file is <code>dawlunix_1.0.0-beta2_amd64.deb</code>. The package version is <code>1.0.0~beta2</code>. <a href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta2/SHA256SUMS.txt">SHA256SUMS.txt</a> is on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta2">v1.0.0-beta2</a> pre-release.</p>
+        <p class="checksum">sha256 <code>6b6988ef4e54b7898e28fc1ce178e0ac8b2dd5c2571b62cfeb7b6612a89a46ef</code></p>
+        <p>The file is 18,043,542 bytes. The hosted name is <code>dawlunix_1.0.0-beta3_amd64.deb</code>. The package version is <code>1.0.0~beta3</code>. It is the only asset on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta3">v1.0.0-beta3</a> pre-release.</p>
         <h3>Install</h3>
-        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta2_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta3_amd64.deb</code></pre>
         <p>apt may pull in Wine as a Recommends. To skip it:</p>
-        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta2_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta3_amd64.deb</code></pre>
         <p>Skipping recommended packages also skips <code>lame</code>. Install <code>lame</code> separately if you want MP3 export.</p>
         <h3>Uninstall</h3>
         <pre class="command"><code>sudo apt remove dawlunix</code></pre>
