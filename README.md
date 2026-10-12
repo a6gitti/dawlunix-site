@@ -55,7 +55,33 @@ To swap a screenshot, replace the file or point the `src` at a new one. Update t
 
 Links and images are relative (`css/style.css`, `images/...`), which is what that project URL needs. `.nojekyll` is in the root so Pages publishes the files as they are, without a Jekyll build.
 
-There is no JavaScript. The text you edit in `index.html` is the text on the page.
+The only script is `js/stars.js`. It fills in the star count on the hero link. The words in `index.html` are the rest of the page.
+
+## Star count
+
+The hero link “Star on GitHub” goes to https://github.com/a6gitti/dawlunix-site. Starring needs a GitHub login. `js/stars.js` reads `stargazers_count` from https://api.github.com/repos/a6gitti/dawlunix-site and shows that integer beside the label.
+
+A successful response is kept in `localStorage` (or `sessionStorage` if local storage is blocked) for 10 minutes, so a refresh in that window does not call the API again. If the request fails, is rate-limited, or does not contain an integer count, the link stays “Star on GitHub” and no number is shown.
+
+## Download counts
+
+Download totals are not on the site.
+
+GitHub’s release `download_count` is public through the API to anyone who queries it. “Private” here means only that the number is not shown on the page.
+
+With the GitHub CLI logged in, from this repository:
+
+```
+./scripts/downloads.sh
+```
+
+Or the same query as one line. Each line is the tag, the `.deb` name, and `download_count`. The last line is the total.
+
+```
+gh api --paginate repos/a6gitti/dawlunix-site/releases --jq '.[] | .tag_name as $t | .assets[] | select(.name|endswith(".deb")) | "\($t) \(.name) \(.download_count)"' | awk '{print} {s+=$NF} END {print "total", s+0}'
+```
+
+A count only you can read needs a counter you host. Point the download button at that URL. It adds one in a private store, then redirects to the release file. A small program on a machine you control, or a free function host, is enough. This repository does not do that, and the page does not show a download total.
 
 ## Publish a package
 
