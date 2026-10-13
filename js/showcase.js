@@ -10,9 +10,13 @@
     video.autoplay = false;
     video.removeAttribute("autoplay");
     video.controls = true;
-    video.preload = "none";
     video.pause();
-    video.load();
+    if (video.currentTime > 0) {
+      video.preload = "none";
+      video.load();
+    } else {
+      video.preload = "none";
+    }
   }
 
   function play() {
