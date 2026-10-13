@@ -462,6 +462,28 @@ figcaption {
   font-size: 0.98rem;
 }
 
+.showcase {
+  width: min(960px, 100%);
+  margin: 8px auto 0;
+}
+
+.showcase-frame {
+  overflow: hidden;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  background: #0c0c0c;
+  box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.28), 0 0 28px rgba(0, 255, 102, 0.16);
+  line-height: 0;
+}
+
+.showcase-frame video,
+.showcase-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #121212;
+}
+
 .beta-notice {
   margin: 0 0 16px;
   padding: 10px 12px;

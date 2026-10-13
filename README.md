@@ -12,6 +12,7 @@ All of the visible copy is in `index.html`. Sections are marked with HTML commen
 
 - `HEADER`
 - `HERO`
+- `SHOWCASE`
 - `VISION`
 - `FEATURES` (each feature is its own `article`)
 - `SCREENSHOTS`
@@ -39,6 +40,10 @@ Pictures live in `images/`. The page refers to them with relative paths.
 | `images/screenshot-piano-roll.png` | Piano roll. |
 | `images/screenshot-mixer.png` | Mixer. |
 | `images/screenshot-dsynth.png` | dSynth window. |
+| `images/dawlunix-beta4-showcase.webm` | Showcase clip, played first. |
+| `images/dawlunix-beta4-showcase.mp4` | Same clip, for browsers without WebM. |
+| `images/dawlunix-beta4-showcase.gif` | Same clip, shown only if the browser has no video element. |
+| `images/dawlunix-beta4-showcase-poster.jpg` | Still frame while the clip is not playing. |
 
 To swap a screenshot, replace the file or point the `src` at a new one. Update the `alt` text in `index.html` so it still describes the picture. The `width` and `height` attributes should match the new file.
 
@@ -55,7 +60,7 @@ To swap a screenshot, replace the file or point the `src` at a new one. Update t
 
 Links and images are relative (`css/style.css`, `images/...`), which is what that project URL needs. `.nojekyll` is in the root so Pages publishes the files as they are, without a Jekyll build.
 
-The only script is `js/stars.js`. It fills in the star count on the hero link. The words in `index.html` are the rest of the page.
+`js/stars.js` fills in the star count on the hero link. `js/showcase.js` plays the showcase clip, and leaves the poster frame in place when the visitor prefers reduced motion. The words in `index.html` are the rest of the page.
 
 ## Star count
 
