@@ -84,7 +84,7 @@
           <article class="card">
             <h3>Playlist and piano roll</h3>
             <p>The playlist is the arrangement. Tracks can be renamed, another lane can be added, and the lane list scrolls when it grows. The timeline scrolls sideways out to bar 300.</p>
-            <p>MIDI clips and imported WAV or MP3 audio sit on the same lanes. Open the piano roll and the notes belong to that clip: move a note and the playlist stays in step with it. <kbd>C</kbd> cuts the selected clip at the playhead. <kbd>S</kbd> toggles stretch on the selected clip.</p>
+            <p>MIDI clips and imported WAV or MP3 audio sit on the same lanes. Open the piano roll and the notes belong to that clip: move a note and the playlist stays in step with it. <kbd>Ctrl</kbd>+drag draws a selection box in the playlist or the piano roll. <kbd>Shift</kbd>+drag on a note duplicates it. <kbd>C</kbd> cuts the selected clip at the playhead. <kbd>S</kbd> toggles stretch on the selected clip.</p>
           </article>
 
           <!-- dSynth -->
@@ -105,7 +105,7 @@
           <article class="card">
             <h3>Mixer</h3>
             <p>Ten channel strips plus a master. Every strip has a fader, pan, mute, solo, and a meter, and six plugin slots. Each fader shows a dB readout: drag the bubble, double-click to reset to 0 dB, <kbd>Ctrl</kbd>+drag for a finer move, or type a value. The stock plugins are EQ, Compressor, Reverb, Echo/Delay, Maximizer, and Halftime. Halftime is a tempo-synced tape-style slowdown, from 25% to 100% slower. 100% is half speed.</p>
-            <p><kbd>F9</kbd> shows or hides the mixer. It docks in the window, under the piano roll.</p>
+            <p><kbd>F9</kbd> shows or hides the mixer. It docks in the window, under the piano roll. The highlighted track header and its mixer strip stay in step.</p>
           </article>
 
           <!-- VST3 -->
@@ -153,10 +153,13 @@
               <li><kbd>C</kbd> <span>Cut the selected clip at the playhead</span></li>
               <li><kbd>S</kbd> <span>Toggle stretch on the selected clip</span></li>
               <li><kbd>Ctrl</kbd><span class="plus">+</span><kbd>S</kbd> <span>Save. If the project is still Untitled, Settings opens so it can be named.</span></li>
+              <li><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Z</kbd> <span>Undo. The history is 40 steps.</span></li>
+              <li><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Shift</kbd><span class="plus">+</span><kbd>Z</kbd> <span>Redo. <kbd>Ctrl</kbd>+<kbd>Y</kbd> does the same.</span></li>
+              <li><kbd>Ctrl</kbd><span class="plus">+</span><kbd>A</kbd> <span>Select all in the playlist or piano roll.</span></li>
               <li><kbd>Home</kbd> <span>Scroll the timeline back to the start</span></li>
-              <li><kbd>Delete</kbd> <span>Delete selected piano-roll notes, or the selected clip when the piano roll is hidden. Backspace does the same.</span></li>
+              <li><kbd>Delete</kbd> <span>Delete the selection: piano-roll notes, or the selected clip when the piano roll is hidden. Backspace does the same.</span></li>
               <li><kbd>F9</kbd> <span>Show or hide the mixer</span></li>
-              <li><kbd>Escape</kbd> <span>Close a track rename or a plugin popup, then ask whether to quit</span></li>
+              <li><kbd>Escape</kbd> <span>Clear a selection. Also closes a track rename or a plugin popup, then asks whether to quit.</span></li>
             </ul>
           </article>
         </div>
@@ -201,30 +204,30 @@
     <!-- ========== DOWNLOAD ========== -->
     <!--
       The .deb is a GitHub Release asset, not a file in this repository.
-      The package version is 1.0.0~beta3. The hosted filename is
-      dawlunix_1.0.0-beta3_amd64.deb. This release's only asset is that file.
+      The package version is 1.0.0~beta4. The hosted filename is
+      dawlunix_1.0.0-beta4_amd64.deb. This release's only asset is that file.
       Install commands use that filename.
     -->
     <section id="download" class="band" aria-labelledby="download-title">
       <div class="wrap narrow">
         <p class="kicker">Download</p>
-        <h2 id="download-title">DawLunix 1.0.0 beta 3</h2>
+        <h2 id="download-title">DawLunix 1.0.0 beta 4</h2>
         <p class="beta-notice" role="note"><strong>Beta.</strong> Expect bugs. Keep backups of your projects.</p>
-        <p><strong>New in beta 3.</strong> Every mixer fader shows a dB readout. Drag the bubble, double-click to reset to 0 dB, <kbd>Ctrl</kbd>+drag for a finer move, or type a value. Halftime is a tempo-synced tape-style slowdown, from 25% to 100% slower. 100% is half speed.</p>
+        <p><strong>New in beta 4.</strong> In the playlist and piano roll, <kbd>Ctrl</kbd>+drag draws a selection box. <kbd>Ctrl</kbd>+click, <kbd>Shift</kbd>+drag to add, <kbd>Ctrl</kbd>+<kbd>A</kbd>, <kbd>Esc</kbd>, <kbd>Delete</kbd>, and <kbd>Ctrl</kbd>+<kbd>D</kbd> work with that selection. <kbd>Shift</kbd>+drag on a note duplicates it. The track header and its mixer strip highlight together. Undo and redo keep 40 steps: <kbd>Ctrl</kbd>+<kbd>Z</kbd>, and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> or <kbd>Ctrl</kbd>+<kbd>Y</kbd>.</p>
         <p class="download-actions">
-          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta3/dawlunix_1.0.0-beta3_amd64.deb">Download DawLunix 1.0.0 beta 3 (.deb)</a>
+          <a class="button" href="https://github.com/a6gitti/dawlunix-site/releases/download/v1.0.0-beta4/dawlunix_1.0.0-beta4_amd64.deb">Download DawLunix 1.0.0 beta 4 (.deb)</a>
         </p>
         <p class="aside">Wine is optional. You only need it if you want to use Windows VST3 plugins through yabridge.</p>
         <p>DawLunix runs fully without Wine: dSynth, drums, the mixer, export, and native Linux VST3s such as Surge XT.</p>
         <h3>Supported systems</h3>
         <p>Ubuntu 22.04 and 24.04, amd64. Built on Ubuntu 22.04.</p>
         <h3>Checksum</h3>
-        <p class="checksum">sha256 <code>6b6988ef4e54b7898e28fc1ce178e0ac8b2dd5c2571b62cfeb7b6612a89a46ef</code></p>
-        <p>The file is 18,043,542 bytes. The hosted name is <code>dawlunix_1.0.0-beta3_amd64.deb</code>. The package version is <code>1.0.0~beta3</code>. It is the only asset on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta3">v1.0.0-beta3</a> pre-release.</p>
+        <p class="checksum">sha256 <code>1c4f8e9d3e6ac400ccf9cf2d7a4b59e3a1a05afcbe1e09044ae2129263df165f</code></p>
+        <p>The file is 18,088,666 bytes. The hosted name is <code>dawlunix_1.0.0-beta4_amd64.deb</code>. The package version is <code>1.0.0~beta4</code>. It is the only asset on the <a href="https://github.com/a6gitti/dawlunix-site/releases/tag/v1.0.0-beta4">v1.0.0-beta4</a> pre-release.</p>
         <h3>Install</h3>
-        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta3_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install ./dawlunix_1.0.0-beta4_amd64.deb</code></pre>
         <p>apt may pull in Wine as a Recommends. To skip it:</p>
-        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta3_amd64.deb</code></pre>
+        <pre class="command"><code>sudo apt install --no-install-recommends ./dawlunix_1.0.0-beta4_amd64.deb</code></pre>
         <p>Skipping recommended packages also skips <code>lame</code>. Install <code>lame</code> separately if you want MP3 export.</p>
         <h3>Uninstall</h3>
         <pre class="command"><code>sudo apt remove dawlunix</code></pre>
